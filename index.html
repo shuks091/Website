@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast, Reliable House Cleaning</title>
+    <meta
+      name="description"
+      content="Rapid Home Cleaning offers reliable house cleaning, deep cleaning, move-out cleaning, and Airbnb cleaning in Buckingham, PA and nearby areas. Get a free quote today."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --white: #ffffff;
+        --blue-50: #eff6ff;
+        --blue-100: #dbeafe;
+        --blue-600: #2563eb;
+        --blue-700: #1d4ed8;
+        --green-100: #dcfce7;
+        --green-600: #16a34a;
+        --slate-100: #e2e8f0;
+        --slate-500: #64748b;
+        --slate-700: #334155;
+        --slate-900: #0f172a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+        color: var(--slate-900);
+        line-height: 1.6;
+        background: var(--white);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 4.5rem 0;
+      }
+
+      .section h2 {
+        margin: 0 0 0.7rem;
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+        color: var(--blue-700);
+      }
+
+      .section-intro {
+        margin: 0 0 2rem;
+        color: var(--slate-500);
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(255, 255, 255, 0.95);
+        border-bottom: 1px solid var(--slate-100);
+        backdrop-filter: blur(8px);
+      }
+
+      .topbar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.9rem 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 800;
+        color: var(--blue-700);
+      }
+
+      .brand-logo {
+        width: 2rem;
+        height: 2rem;
+        display: grid;
+        place-items: center;
+        border-radius: 0.5rem;
+        background: var(--blue-600);
+        color: var(--white);
+      }
+
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+
+      .call-chip {
+        font-weight: 700;
+        color: var(--slate-700);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--blue-600);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background: var(--blue-700);
+      }
+
+      .btn-outline {
+        background: var(--white);
+        color: var(--blue-700);
+        border-color: var(--blue-600);
+      }
+
+      .btn-outline:hover {
+        background: var(--blue-50);
+      }
+
+      .hero {
+        background: linear-gradient(160deg, var(--blue-50) 0%, #ffffff 58%, #f0fdf4 100%);
+        padding: 5rem 0 4.2rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .hero h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.15;
+      }
+
+      .hero p {
+        margin: 0 0 1.5rem;
+        color: var(--slate-700);
+        font-size: 1.06rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.2rem;
+        color: var(--slate-700);
+        font-size: 0.95rem;
+      }
+
+      .hero-card {
+        background: var(--white);
+        border: 1px solid var(--blue-100);
+        border-radius: 1rem;
+        padding: 0.95rem;
+        box-shadow: 0 16px 32px rgba(2, 6, 23, 0.08);
+      }
+
+      .hero-card img {
+        width: 100%;
+        min-height: 290px;
+        border-radius: 0.85rem;
+        object-fit: cover;
+      }
+
+      .grid-3,
+      .grid-4,
+      .grid-5 {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .card {
+        border: 1px solid var(--slate-100);
+        border-radius: 0.95rem;
+        padding: 1.1rem;
+        background: var(--white);
+      }
+
+      .icon {
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 0.6rem;
+        background: var(--blue-100);
+        color: var(--blue-700);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        margin-bottom: 0.65rem;
+      }
+
+      h3 {
+        margin: 0 0 0.35rem;
+        color: var(--blue-700);
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .soft-section {
+        background: #f8fafc;
+      }
+
+      .service-card img {
+        height: 160px;
+        width: 100%;
+        border-radius: 0.8rem;
+        object-fit: cover;
+        margin-bottom: 0.75rem;
+      }
+
+      .pricing-card {
+        border-left: 4px solid var(--green-600);
+      }
+
+      .price {
+        color: var(--green-600);
+        font-weight: 800;
+        margin-top: 0.25rem;
+      }
+
+      .check-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 0.8rem;
+      }
+
+      .check {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-weight: 600;
+        color: var(--slate-700);
+      }
+
+      .check i {
+        width: 1.35rem;
+        height: 1.35rem;
+        border-radius: 999px;
+        background: var(--green-100);
+        color: var(--green-600);
+        display: grid;
+        place-items: center;
+        font-style: normal;
+        font-size: 0.85rem;
+      }
+
+      .area {
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .stars {
+        color: #f59e0b;
+        margin-bottom: 0.35rem;
+      }
+
+      .quote {
+        background: linear-gradient(160deg, var(--blue-50), #f0fdf4);
+      }
+
+      .quote-wrap {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 1rem;
+      }
+
+      .quote-box {
+        background: var(--white);
+        border: 1px solid var(--blue-100);
+        border-radius: 1rem;
+        padding: 1.2rem;
+      }
+
+      form {
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
+      }
+
+      label {
+        font-weight: 600;
+        color: var(--slate-700);
+        font-size: 0.93rem;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        margin-top: 0.35rem;
+        padding: 0.7rem 0.8rem;
+        border-radius: 0.6rem;
+        border: 1px solid #cbd5e1;
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+
+      footer {
+        background: var(--slate-900);
+        color: #dbeafe;
+        padding: 2rem 0;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .footer-right {
+        text-align: right;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .quote-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-3,
+        .grid-4,
+        .grid-5 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar-content {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .topbar-right {
+          justify-content: space-between;
+        }
+
+        .section {
+          padding: 3.2rem 0;
+        }
+
+        .grid-3,
+        .grid-4,
+        .grid-5,
+        .form-grid,
+        .check-list,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-right {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-content">
+        <div class="brand"><span class="brand-logo">RH</span><span>Rapid Home Cleaning</span></div>
+        <div class="topbar-right">
+          <a class="call-chip" href="tel:2673971096">📞 2673971096</a>
+          <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1>Fast, Reliable House Cleaning</h1>
+            <p>
+              Professional cleaners for homes, move-outs, and rentals. One-time or recurring. Easy
+              online booking.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+              <a class="btn btn-outline" href="tel:2673971096">Call Now</a>
+            </div>
+            <div class="hero-badges">
+              <span>✅ Vetted local cleaners</span>
+              <span>✅ Upfront pricing</span>
+              <span>✅ Satisfaction-focused service</span>
+            </div>
+          </div>
+          <div class="hero-card">
+            <img
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80"
+              alt="Professional cleaner wiping a kitchen counter"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works">
+        <div class="container">
+          <h2>How It Works</h2>
+          <p class="section-intro">Getting your home cleaned is simple and stress-free.</p>
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">1</div>
+              <h3>Tell us about your home</h3>
+              <p>Share your home size, cleaning type, and timing through our form or by phone.</p>
+            </article>
+            <article class="card">
+              <div class="icon">2</div>
+              <h3>We match you with a trusted cleaner</h3>
+              <p>We schedule a vetted local pro who fits your needs and preferred date.</p>
+            </article>
+            <article class="card">
+              <div class="icon">3</div>
+              <h3>Your home is cleaned to your standards</h3>
+              <p>Our team follows your priorities so every room feels fresh and ready.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft-section" id="services">
+        <div class="container">
+          <h2>Cleaning Services</h2>
+          <p class="section-intro">Flexible options for everyday upkeep, deep resets, and turnovers.</p>
+          <div class="grid-4">
+            <article class="card service-card">
+              <img
+                src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1200&q=80"
+                alt="Clean and organized living room after house cleaning"
+              />
+              <h3>Standard Cleaning</h3>
+              <p>Routine kitchen, bathroom, dusting, vacuuming, mopping, and touch-up cleaning.</p>
+            </article>
+            <article class="card service-card">
+              <img
+                src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=1200&q=80"
+                alt="Cleaner disinfecting a bathroom sink"
+              />
+              <h3>Deep Cleaning</h3>
+              <p>Detailed top-to-bottom cleaning for buildup, seasonal resets, or first-time service.</p>
+            </article>
+            <article class="card service-card">
+              <img
+                src="https://images.unsplash.com/photo-1520006403909-838d6b92c22e?auto=format&fit=crop&w=1200&q=80"
+                alt="Cleaner mopping floors during move-out cleaning"
+              />
+              <h3>Move-Out Cleaning</h3>
+              <p>Thorough cleaning to help make move-outs easier for renters, owners, and landlords.</p>
+            </article>
+            <article class="card service-card">
+              <img
+                src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80"
+                alt="Freshly made bed in a cleaned short-term rental"
+              />
+              <h3>Airbnb Cleaning</h3>
+              <p>Quick turnover cleans for short-term rentals to keep guests happy and reviews strong.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="container">
+          <h2>Starting Pricing</h2>
+          <p class="section-intro">Simple, upfront estimates with no hidden fees.</p>
+          <div class="grid-4">
+            <article class="card pricing-card">
+              <h3>1–2 bedroom standard cleaning</h3>
+              <p class="price">from $120</p>
+            </article>
+            <article class="card pricing-card">
+              <h3>3 bedroom standard cleaning</h3>
+              <p class="price">from $150</p>
+            </article>
+            <article class="card pricing-card">
+              <h3>Deep cleaning</h3>
+              <p class="price">from $200</p>
+            </article>
+            <article class="card pricing-card">
+              <h3>Move-out cleaning</h3>
+              <p class="price">from $220</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft-section" id="why-us">
+        <div class="container">
+          <h2>Why Choose Us</h2>
+          <p class="section-intro">Trusted local cleaning support tailored to your schedule and priorities.</p>
+          <div class="check-list">
+            <div class="check"><i>✓</i>Vetted local cleaners</div>
+            <div class="check"><i>✓</i>Flexible scheduling</div>
+            <div class="check"><i>✓</i>Simple, upfront pricing</div>
+            <div class="check"><i>✓</i>Satisfaction-focused</div>
+            <div class="check"><i>✓</i>Serving Buckingham and nearby areas</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="areas">
+        <div class="container">
+          <h2>Service Areas</h2>
+          <p class="section-intro">Based in Buckingham, PA and serving nearby Bucks County communities.</p>
+          <div class="grid-5">
+            <div class="card area">Buckingham</div>
+            <div class="card area">Doylestown</div>
+            <div class="card area">New Hope</div>
+            <div class="card area">Lahaska</div>
+            <div class="card area">Solebury</div>
+            <div class="card area">Warminster</div>
+            <div class="card area">Warrington</div>
+            <div class="card area">Jamison</div>
+            <div class="card area">Furlong</div>
+            <div class="card area">Yardley</div>
+            <div class="card area">Fairless Hills</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft-section" id="reviews">
+        <div class="container">
+          <h2>Customer Reviews</h2>
+          <p class="section-intro">Homeowners and hosts in the area trust us with their cleanings.</p>
+          <div class="grid-4">
+            <article class="card">
+              <p class="stars">★★★★★</p>
+              <p>
+                “Our house looks amazing every visit. They’re always on time and super easy to work with.”
+              </p>
+              <p><strong>— Emily S., Buckingham</strong></p>
+            </article>
+            <article class="card">
+              <p class="stars">★★★★★</p>
+              <p>
+                “Booked a deep clean before family came over. Worth every dollar and very professional.”
+              </p>
+              <p><strong>— David R., Doylestown</strong></p>
+            </article>
+            <article class="card">
+              <p class="stars">★★★★★</p>
+              <p>
+                “They handled my move-out cleaning perfectly and helped me leave the place spotless.”
+              </p>
+              <p><strong>— Maria G., New Hope</strong></p>
+            </article>
+            <article class="card">
+              <p class="stars">★★★★★</p>
+              <p>
+                “Great Airbnb turnover team. Fast communication and consistent quality between guests.”
+              </p>
+              <p><strong>— Kevin L., Warrington</strong></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section quote" id="quote">
+        <div class="container quote-wrap">
+          <div class="quote-box">
+            <h2>Request Your Free Quote</h2>
+            <p>
+              Tell us about your home and preferred timing. We’ll send a clear quote and confirm your
+              booking fast.
+            </p>
+            <p><strong>Phone:</strong> <a href="tel:2673971096">2673971096</a></p>
+            <p><strong>Email:</strong> <a href="mailto:rapidjunklabor@gmail.com">rapidjunklabor@gmail.com</a></p>
+            <p><strong>Hours:</strong> Mon–Sat 8:00 AM – 6:00 PM</p>
+          </div>
+          <div class="quote-box">
+            <form>
+              <div class="form-grid">
+                <label>
+                  Name
+                  <input type="text" name="name" autocomplete="name" required />
+                </label>
+                <label>
+                  Phone
+                  <input type="tel" name="phone" autocomplete="tel" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="email" autocomplete="email" required />
+                </label>
+                <label>
+                  Address
+                  <input type="text" name="address" autocomplete="street-address" />
+                </label>
+                <label>
+                  Type of cleaning
+                  <select name="cleaningType" required>
+                    <option value="">Select one</option>
+                    <option>Standard Cleaning</option>
+                    <option>Deep Cleaning</option>
+                    <option>Move-Out Cleaning</option>
+                    <option>Airbnb Cleaning</option>
+                  </select>
+                </label>
+                <label>
+                  Number of bedrooms/bathrooms
+                  <input type="text" name="rooms" placeholder="Example: 3 bed / 2 bath" />
+                </label>
+                <label>
+                  Preferred date/time
+                  <input type="text" name="preferredDateTime" placeholder="Example: Friday after 1 PM" />
+                </label>
+              </div>
+              <label>
+                Special notes
+                <textarea
+                  name="notes"
+                  placeholder="Share parking details, entry instructions, pets, or focus areas."
+                ></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary">Send My Quote Request</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <strong>Rapid Home Cleaning</strong><br />
+          Buckingham, PA & nearby areas<br />
+          Phone: <a href="tel:2673971096">2673971096</a><br />
+          Email: <a href="mailto:rapidjunklabor@gmail.com">rapidjunklabor@gmail.com</a>
+        </div>
+        <div class="footer-right">Hours: Mon–Sat 8:00 AM – 6:00 PM</div>
+      </div>
+    </footer>
+  </body>
+</html>
